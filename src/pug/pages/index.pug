@@ -1,0 +1,246 @@
+extends ../base/_base.pug
+
+block content
+    //- a(href="./error-page.html") text
+    .wrapper 
+        .container     
+            section.slider-show
+                .row.no-gutters
+                    .col-md-8.slider-left
+                        #demo.carousel.slide(data-ride='carousel')
+                            // Indicators
+                            ul.carousel-indicators
+                                li.active(data-target='#demo' data-slide-to='0')
+                                li(data-target='#demo' data-slide-to='1')
+                                li(data-target='#demo' data-slide-to='2')
+                            // The slideshow
+                            .carousel-inner
+                                +sliderShowImg()
+                            // Left and right controls
+                            a.carousel-control-prev(href='#demo' data-slide='prev').justify-content-start
+                                i.fas.fa-chevron-left
+                            a.carousel-control-next(href='#demo' data-slide='next').justify-content-end
+                                i.fas.fa-chevron-right
+
+                    .col-md-4.slider-right
+                        .slider-right__services                                    
+                                +sliderShowServices()
+            
+            section.product__view
+                .row.no-guttters                                        
+                        .controls-top.d-flex.justify-content-end
+                                        a.btn-floating(href='#multi-item-example' data-slide='prev').arrow-left.active
+                                            i.fa.fa-chevron-left
+                                        a.btn-floating(href='#multi-item-example' data-slide='next').arrow-right
+                                            i.fa.fa-chevron-right                                                                                
+                        +listTitleProductCategoriesvertical("Sản phẩm nổi bật")
+                .row.no-guttters
+                    .col-md-3
+                        .product__view-left                                                         
+                            
+                                                        
+                            +listProductCategoriesVertical()
+                    .col-md-9
+                        .product__view-right
+                            .right__product-slider  
+                                // Carousel Wrapper carousel.slide.carousel-multi-item(data-ride='carousel')
+                                #multi-item-example                                                                                                    
+                                    // Slides
+                                    .carousel-inner(role='listbox')
+                                        // First slide
+                                        .carousel-item.active
+                                            .row
+                                                .col-md-4                            
+                                                    .card-item  
+                                                        .card-img                      
+                                                            img.card-img-top(src='https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg' alt='Card image cap')
+                                                        .card-body
+                                                            p.card-text 1.500.000 đ
+                                                            h4.card-title Máy khoan black decker
+                                                            .rating-product
+                                                                span.fa.fa-star.checked
+                                                                span.fa.fa-star.checked
+                                                                span.fa.fa-star.checked
+                                                                span.fa.fa-star
+                                                                span.fa.fa-star
+                                                                
+                                                .col-md-4.clearfix.d-none.d-md-block                                                    
+                                                    .card-item
+                                                        .card-img         
+                                                            img.card-img-top(src='https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg' alt='Card image cap')
+                                                        .card-body
+                                                            h4.card-title Card title
+                                                            p.card-text
+                                                            | Some quick example text to build on the card title and make up the bulk of the
+                                                            | card's content.
+                                                            a.btn.btn-primary Button
+                                                .col-md-4.clearfix.d-none.d-md-block                                                    
+                                                    .card-item
+                                                        img.card-img-top(src='https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg' alt='Card image cap')
+                                                        .card-body
+                                                            h4.card-title Card title
+                                                            p.card-text
+                                                            | Some quick example text to build on the card title and make up the bulk of the
+                                                            | card's content.
+                                                            a.btn.btn-primary Button
+                                                .col-md-4                                                    
+                                                    .card-item
+                                                        .card-img
+                                                            img.card-img-top(src='https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg' alt='Card image cap')
+                                                        .card-body
+                                                            h4.card-title Card title
+                                                            p.card-text
+                                                            | Some quick example text to build on the card title and make up the bulk of the
+                                                            | card's content.
+                                                            a.btn.btn-primary Button
+                                                .col-md-4.clearfix.d-none.d-md-block                                                    
+                                                    .card-item
+                                                        .card-img                                            
+                                                            img.card-img-top(src='https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg' alt='Card image cap')
+                                                        .card-body
+                                                            h4.card-title Card title
+                                                            p.card-text
+                                                            | Some quick example text to build on the card title and make up the bulk of the
+                                                            | card's content.
+                                                            a.btn.btn-primary Button
+                                                .col-md-4.clearfix.d-none.d-md-block                                                    
+                                                    .card-item
+                                                        .card-img     
+                                                            img.card-img-top(src='https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg' alt='Card image cap')
+                                                        .card-body
+                                                            h4.card-title Card title
+                                                            p.card-text
+                                                            | Some quick example text to build on the card title and make up the bulk of the
+                                                            | card's content.
+                                                            a.btn.btn-primary Button
+                                        // /.First slide
+                                        // Second slide
+                                        .carousel-item
+                                            .row
+                                                .col-md-4                                                    
+                                                    .card-item
+                                                        .card-img     
+                                                            img.card-img-top(src='https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg' alt='Card image cap')
+                                                        .card-body
+                                                            h4.card-title Card title
+                                                            p.card-text
+                                                            | Some quick example text to build on the card title and make up the bulk of the
+                                                            | card's content.
+                                                            a.btn.btn-primary Button
+                                                .col-md-4.clearfix.d-none.d-md-block                                                    
+                                                    .card-item
+                                                        .card-img 
+                                                            img.card-img-top(src='https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg' alt='Card image cap')
+                                                        .card-body
+                                                            h4.card-title Card title
+                                                            p.card-text
+                                                            | Some quick example text to build on the card title and make up the bulk of the
+                                                            | card's content.
+                                                            a.btn.btn-primary Button
+                                                .col-md-4.clearfix.d-none.d-md-block                                                    
+                                                    .card-item
+                                                        .card-img 
+                                                            img.card-img-top(src='https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg' alt='Card image cap')
+                                                        .card-body
+                                                            h4.card-title Card title
+                                                            p.card-text
+                                                            | Some quick example text to build on the card title and make up the bulk of the
+                                                            | card's content.
+                                                            a.btn.btn-primary Button
+                                                .col-md-4                                                    
+                                                    .card-item
+                                                        .card-img 
+                                                            img.card-img-top(src='https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg' alt='Card image cap')
+                                                        .card-body
+                                                            h4.card-title Card title
+                                                            p.card-text
+                                                            | Some quick example text to build on the card title and make up the bulk of the
+                                                            | card's content.
+                                                            a.btn.btn-primary Button
+                                                .col-md-4.clearfix.d-none.d-md-block                                                    
+                                                    .card-item
+                                                        .card-img 
+                                                            img.card-img-top(src='https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg' alt='Card image cap')
+                                                        .card-body
+                                                            h4.card-title Card title
+                                                            p.card-text
+                                                            | Some quick example text to build on the card title and make up the bulk of the
+                                                            | card's content.
+                                                            a.btn.btn-primary Button
+                                                .col-md-4.clearfix.d-none.d-md-block                                                    
+                                                    .card-item
+                                                        .card-img 
+                                                            img.card-img-top(src='https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg' alt='Card image cap')
+                                                        .card-body
+                                                            h4.card-title Card title
+                                                            p.card-text
+                                                            | Some quick example text to build on the card title and make up the bulk of the
+                                                            | card's content.
+                                                            a.btn.btn-primary Button
+                                        // Third slide
+                                        .carousel-item
+                                            .row
+                                                .col-md-4                                                    
+                                                    .card-item
+                                                        .card-img 
+                                                            img.card-img-top(src='https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg' alt='Card image cap')
+                                                        .card-body
+                                                            h4.card-title Card title
+                                                            p.card-text
+                                                            | Some quick example text to build on the card title and make up the bulk of the
+                                                            | card's content.
+                                                            a.btn.btn-primary Button
+                                                .col-md-4.clearfix.d-none.d-md-block                                                    
+                                                    .card-item
+                                                        .card-img 
+                                                            img.card-img-top(src='https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg' alt='Card image cap')
+                                                        .card-body
+                                                            h4.card-title Card title
+                                                            p.card-text
+                                                            | Some quick example text to build on the card title and make up the bulk of the
+                                                            | card's content.
+                                                            a.btn.btn-primary Button
+                                                .col-md-4.clearfix.d-none.d-md-block                                                    
+                                                    .card-item
+                                                        .card-img 
+                                                            img.card-img-top(src='https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg' alt='Card image cap')
+                                                        .card-body
+                                                            h4.card-title Card title
+                                                            p.card-text
+                                                            | Some quick example text to build on the card title and make up the bulk of the
+                                                            | card's content.
+                                                            a.btn.btn-primary Button
+                                                .col-md-4                                                    
+                                                    .card-item
+                                                        .card-img 
+                                                            img.card-img-top(src='https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(34).jpg' alt='Card image cap')
+                                                        .card-body
+                                                            h4.card-title Card title
+                                                            p.card-text
+                                                            | Some quick example text to build on the card title and make up the bulk of the
+                                                            | card's content.
+                                                            a.btn.btn-primary Button
+                                                .col-md-4.clearfix.d-none.d-md-block                                                    
+                                                    .card-item
+                                                        .card-img 
+                                                            img.card-img-top(src='https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(18).jpg' alt='Card image cap')
+                                                        .card-body
+                                                            h4.card-title Card title
+                                                            p.card-text
+                                                            | Some quick example text to build on the card title and make up the bulk of the
+                                                            | card's content.
+                                                            a.btn.btn-primary Button
+                                                .col-md-4.clearfix.d-none.d-md-block                                                    
+                                                    .card-item
+                                                        .card-img 
+                                                            img.card-img-top(src='https://mdbootstrap.com/img/Photos/Horizontal/Nature/4-col/img%20(35).jpg' alt='Card image cap')
+                                                        .card-body
+                                                            h4.card-title Card title
+                                                            p.card-text
+                                                            | Some quick example text to build on the card title and make up the bulk of the
+                                                            | card's content.
+                                                            a.btn.btn-primary Button
+                                        // /.Third slide
+                                        // /.Slides
+                                    // /.Carousel Wrapper
+

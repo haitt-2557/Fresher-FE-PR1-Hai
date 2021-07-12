@@ -1,0 +1,36 @@
+@import "../partials/slider";
+@import "../base/variables";
+@import "../base/mixins";
+
+.product__view {
+  h2 {
+    @include title-h2-w-icon();
+  }
+}
+.product__view-left {
+  .list__categories-vertical {
+    //border($direction: false, $width: 0, $style: null, $color: null)
+    @include border(top, 0.08, solid, $gray-2-border);
+    @include border(right, 0.08, solid, $gray-2-border);
+    @include border(left, 0.08, solid, $gray-2-border);
+    .active {
+      @include active($primary-1);
+      & > a {
+        @include active(false, $primary-2);
+      }
+    }
+    .item-cate a {
+      @include border(bottom, 0.08, solid, $gray-2-border);
+      color: $gray-6;
+      padding: 2rem;
+      @include font-size(14);
+      & > span {
+        margin-left: 1rem;
+      }
+    }
+  }
+}
+.product__view-right {
+  .right__product-slider {
+  }
+}

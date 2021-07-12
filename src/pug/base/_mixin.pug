@@ -1,0 +1,81 @@
+include ../data/_data.pug
+
+mixin headerListItemTopLeft
+    each item in dataHeaderTopLeft
+        a.nav-link(href='#').nav-item(class=`${item.classActive}`)
+            i(class=`${item.icon}`)
+
+mixin headerListItemTopRight
+    each item in dataHeaderTopRight
+        a.nav-link(href='#').nav-item= item.text
+
+mixin headerBottomtitle(title, phone)
+    h3.title= title
+    span= phone
+
+mixin headerNavMenu()
+    each item in dataHeaderNavMenu
+        a(href=`./${item.homepage}` class=`${item.className} ${item.classActive}`)= item.text
+
+mixin text-title-w-icon(title)
+    .title-icon.icon-4-square-size
+        img(src=`./assets/images/4-black-squares.svg`, alt="Logo")
+    h2= title
+
+mixin footerTopAboutUS(classIcon,text)
+    .about
+        i(class=`${classIcon}`)
+        p= text
+
+mixin footerTopServiceList(data,haveicon)
+    if  haveicon 
+        each item in data
+            .wrapper-list-item
+                i(class=`${item.icon}`)
+                a(href="#").haveicon--item= item.text
+    else
+        each item in data            
+            a(href="#")= item.text
+
+mixin footerMiddlePayment(data)
+    each item in data
+        .payment-list-item
+            img(src=`./assets/images/payments/${item.img}`, alt="Logo")
+
+mixin footerMiddleAnswers()
+    each item in dataFooterAdvfeed
+        .advisory-feedback-item
+            .icon
+                i(class=`${item.icon}`)
+            .feedback-wrap
+                h5= item.text
+                strong= item.phone
+
+mixin sliderShowImg()
+    each item in slideShowImg
+     .carousel-item(class=`${item.active}`)
+        img(src=`./assets/images/${item.img}` alt=`${item.alt}` width=`${item.width}` height=`${item.height}`)
+    
+mixin sliderShowServices()
+    each item in slideShowServices
+        .slider-right__services-item.d-flex.align-items-center(class=`${item.active}`)
+            .icon
+                i(class=`${item.icon}`)
+            .desc 
+                h2= item.title
+                p= item.text
+
+mixin listTitleProductCategoriesvertical(name)
+    .title-product-cate.d-flex.align-items-center.py-4
+        div.icon-4-square-size
+            img(src=`./assets/images/4-black-squares.svg`, alt="Logo")
+        h2= name
+
+mixin listProductCategoriesVertical()
+    ul.list__categories-vertical
+        each item in dataListProductCategoriesVertical
+            li.item-cate(class=`${item.active}`)
+                a(href='#' target='_blank').d-flex.align-items-center
+                    div.icon-4-square-size
+                        i(class=`${item.icon}`)
+                    span= item.text
