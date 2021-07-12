@@ -1,5 +1,6 @@
 extends ../base/_base.pug
-
+block variables
+    - var titleHTMl = 'Đăng nhập'
 block content
     .container
         +dataBreadcrumb("Trang chủ","Đăng nhập")
@@ -10,18 +11,15 @@ block content
                     form(action='error-page.html')
                         .row
                             .col-12
-                                .form-group
-                                    +labelForm("u","Họ và tên:",true)
-                                    +inputForm("fullName",false,false,"ipFullName")
+                                .form-group                                
+                                    +label-input-group("fullName", false, "input", "ipFullName", "Họ và tên", "u", true)                                    
                             .col-12
                                 .form-group
-                                    +labelForm("u","Email:",true)
-                                    +inputForm("Email",false,false,"ipFullName")
+                                    +label-input-group("fullName", false, "email", "ipFullName", "Email", "u", true)                                    
                             .col-12
                                 .form-check.d-flex.justify-content-between
                                     .left
-                                        +inputCheckboxForm()
-                                        +labelCheckboxForm("Ghi nhớ đăng nhập")
+                                        +labelCheckboxForm("Ghi nhớ mật khẩu")
                                     .right
                                         a(href="#").forgotpw  Bạn quên mật khẩu?
                             .col-12

@@ -18,18 +18,11 @@
     @include border(false, 0.05, solid, $gray-6);
     color: $primary-1;
     &.arrow-left {
-      margin-right: 1rem !important;
+      margin-right: 1rem;
     }
     &:hover {
       @include hover($primary-1, $primary-3);
     }
-  }
-}
-.carousel-item {
-  .carousel-item {
-  }
-  .checked {
-    color: $orange;
   }
 }
 
@@ -111,7 +104,18 @@ button.btn-form {
 .multiple__services-slider {
   background: $gray-1;
   margin: 3rem 0;
+  .button--mod {
+    @include display(flex, center, false, space-between);
+  }
   /* carousel */
+  .card {
+    background: $gray-1;
+    border: none;
+  }
+
+  .services-slider__wrapper {
+    @include display(flex, center, center, space-between);
+  }
 }
 
 a {
@@ -126,7 +130,7 @@ a {
 .table-responsive {
   @include text13-weight(600);
   .table thead th {
-    vertical-align: middle !important;
+    vertical-align: middle;
     text-align: center;
   }
   .font-large {
@@ -141,7 +145,7 @@ a {
       @include border(false, 0.08, solid, $gray-2-border);
     }
     tr {
-      text-align: center !important;
+      text-align: center;
       img {
         width: 10rem;
       }
@@ -149,6 +153,39 @@ a {
     th,
     td {
       vertical-align: middle;
+    }
+  }
+}
+
+#carouselExampleIndicators3 {
+  .card {
+    text-align: center !important;
+    img {
+      width: 50%;
+      margin: 0 auto;
+    }
+  }
+}
+
+.button-pre-next {
+  text-align: right;
+  & a {
+    padding: 1rem;
+    @include buttonStyle("", $primary-3, $primary-1);
+    @include border(false, 0.08, solid, $gray-2-border);
+
+    &:hover {
+      @include border(false, 0.08, solid, $gray-2-border);
+      @include hover($primary-1);
+    }
+  }
+}
+
+.product__view-right {
+  .carousel-inner {
+    img {
+      margin: 0 auto;
+      width: 10rem;
     }
   }
 }

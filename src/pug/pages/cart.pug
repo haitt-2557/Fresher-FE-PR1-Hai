@@ -1,5 +1,6 @@
 extends ../base/_base.pug
-
+block variables
+    - var titleHTMl = 'Giỏ hàng'
 block content
     .container
         +dataBreadcrumb("Trang chủ", "Giỏ hàng")
@@ -19,10 +20,9 @@ block content
                                     td 685.000 đ
                                 tr                    
                                     td Thanh toán
-                                    td(class="font-large font-large--red") 7.520.000 đ 
-                    
+                                    td(class="font-large font-large--red") 7.520.000 đ                     
                 .col-md-12.col-sm-12.text-right.button-group.my-10
                     form(action="error-page.html")
-                        +buttonForm("button","Tiếp tục mua hàng", "index.html")
-                        +buttonForm("submit", "Thanh toán")
+                        +buttonForm("button", "Tiếp tục mua hàng",  "index.html")
+                        +buttonForm("submit",  "Thanh toán")
                     
