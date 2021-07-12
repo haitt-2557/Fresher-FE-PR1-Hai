@@ -117,15 +117,6 @@ button.btn-form {
   }
 }
 
-a {
-  color: rgba(38, 137, 13, 1);
-
-  &:hover,
-  &:focus {
-    color: rgba(4, 106, 56, 1);
-  }
-}
-
 .table-responsive {
   @include text13-weight(600);
   .table thead th {
@@ -194,4 +185,22 @@ a {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+}
+
+.pagination-custom {
+  .page-item.active .page-link {
+    @include active($primary-2, $primary-3);
+    @include border(false, 0.08, solid, $gray-2-border);
+  }
+
+  a {
+    color: $primary-1;
+  }
+}
+
+.newsFilter-title {
+  @include text-weight(13, 600);
+  padding: 1.5rem 1rem;
+  color: $primary-2;
+  background-color: $primary-1;
 }

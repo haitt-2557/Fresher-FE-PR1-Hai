@@ -181,7 +181,7 @@
     gap: 0.5rem;
     text-transform: uppercase;
     @include for-size(normal) {
-      display: none !important;
+      display: none;
     }
     a {
       @include border(false, 0.08, solid, $gray-2-border);
