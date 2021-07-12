@@ -85,6 +85,9 @@
   }
 
   .header__nav-wrapper {
+    @include for-size(normal){
+      display: none !important;
+    }
     background: $primary-1;
     .active {
       @include active($primary-2, false);

@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/haitt-2557/Fresher-FE-PR1-Hai#readme",
   "dependencies": {
+    "axios": "^0.21.1",
     "browser-sync": "^2.27.3",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",

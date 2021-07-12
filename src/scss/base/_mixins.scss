@@ -61,8 +61,7 @@
   -o-transition: 0.5;
 }
 @mixin border-boxShadow {
-  border: 1px solid #e5e5e5;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 6px $gray-8;
 }
 
 @mixin flex($direction, $justify, $alight, $gap: 0) {
@@ -203,4 +202,14 @@
       }
     }
   }
+}
+
+@mixin hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+@mixin show {
+  opacity: 1;
+  visibility: visible;
 }

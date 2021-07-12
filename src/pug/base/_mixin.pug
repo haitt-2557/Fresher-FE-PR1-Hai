@@ -98,15 +98,7 @@ mixin label-checkbox-form(text)
     label.form-check-label(for='flexCheckDefault')
         strong= text
 
-mixin inputForm(id, className=false, type=false, name=false, text=false)
-    input(id=`${id}` class=`${className}` type=`${type}` name=`${name}` placeHolder=`${text}`).form-control
-
-mixin labelCheckboxForm(text)
-    input#flexCheckDefault.form-check-input(type='checkbox' value='')
-    label.form-check-label(for='flexCheckDefault')
-        strong= text    
-
-mixin buttonForm(type,text="", link)
+mixin buttonForm(type, text="", link)
     if type == "button"
         button(type=type class="btn-form").active
             a(href=link)=text
