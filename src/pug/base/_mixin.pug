@@ -89,6 +89,12 @@ mixin label-input-group(id, className=false, type=false, name=false, text=false,
         label(for=labelFor class="label-form")= text
     input(id=`${id}` class=`${className}` type=`${type}` name=`${name}` placeHolder=`${text}`).form-control
 
+mixin labelCheckboxForm(text)
+    label.form-check-label(for='flexCheckDefault')
+        strong= text
+
+mixin inputForm(id, className=false, type=false, name=false, text=false)
+    input(id=`${id}` class=`${className}` type=`${type}` name=`${name}` placeHolder=`${text}`).form-control
 
 mixin labelCheckboxForm(text)
     input#flexCheckDefault.form-check-input(type='checkbox' value='')

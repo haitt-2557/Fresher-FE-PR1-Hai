@@ -17,6 +17,7 @@
       display: inline-block;
     }
     .filter__item {
+      list-style: none !important;
       color: $gray-3;
       padding: 1.2rem;
       line-height: 2rem;
@@ -82,6 +83,7 @@
     }
   }
 }
+
 .newsFilter {
   @include for-size(lg) {
     display: none;
