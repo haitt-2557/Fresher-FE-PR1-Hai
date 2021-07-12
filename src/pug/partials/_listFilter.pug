@@ -16,14 +16,14 @@ mixin filter(data, type, icon)
     - const bgColors = ["#e61010", "#f5bd10", "#0685ca", "#acacac", "#252525"]
     if type != "Y"
         each filter,index in data
-            li.filter__item
-                .d-flex.align-items-center
+            li.filter__item(onclick="handleChangeCategories(event)" data-id = `${index +1}`)
+                .d-flex.p-3(data-id = `${index + 1}`)
                     if icon !== "Z"
-                        i.fas.fa-th-large
-                        span.pl-2= filter
+                        i.mt-2.fas.fa-th-large
+                        p.pl-2= filter
                     else
                         span.my-auto.filterColor(style=`background-color: ${bgColors[index]}`)
-                        span.pl-2= filter
+                        p.pl-2= filter
     else
         -let productDiscount = 0
         while productDiscount++ < 5

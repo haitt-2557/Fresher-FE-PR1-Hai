@@ -3,63 +3,9 @@ include ../data/_data.pug
     - var options = detailProduct[0].size
 mixin product({img, name, gia, danhGia, content, stars}, type)
     if type != "Y"
-        .main__product
-            .main__product-inner
-                .main__product-img
-                    img(src=img, alt="product")
-                .main__product-content.text-center
-                    span.price= `${gia} Đ`
-                    h2.main__product-content-title= name
-                    .d-flex.justify-content-center
-                        ul.d-flex
-                            - var i = 1;
-                            while i <= stars
-                                li 
-                                    i.fas.fa-star
-                                    - i++
-
-                            if !Number.isInteger(stars)
-                                li 
-                                    i.fas.fa-star-half-alt
-                                    - i++
-                            while i <= 5
-                                li 
-                                    i.far.fa-star
-                                    - i++
-                        span.pb-3.text-span.font-italic.pl-1= `( ${danhGia} đánh giá )`
-                .main__product-btn.d-flex.px-2
-                    a.btn.btn-warning MUA NGAY
-                    a.btn.btn-dark(href="./productDetails.html") XEM CHI TIẾT
+        
     else
-        .main__productOther
-            .main__productOther-inner
-                .main__productOther-img
-                    img(src=img, alt="product")
-                .main__productOther-content
-                    h2.main__productOther-content-title= name
-                    .d-flex
-                        ul.d-flex
-                            - var i = 1;
-                            while i <= stars
-                                li 
-                                    i.fas.fa-star
-                                    - i++
-
-                            if !Number.isInteger(stars)
-                                li 
-                                    i.fas.fa-star-half-alt
-                                    - i++
-                            while i <= 5
-                                li 
-                                    i.far.fa-star
-                                    - i++
-                        span.text-span.font-italic.pl-1= `( ${danhGia} đánh giá )`
-                    p.line-clamp.text-span.productOther-content-text= content
-                    span.price= `${gia} Đ`
-
-                    .main__product-btn.d-flex.justify-content-start
-                        a.btn.btn-warning MUA NGAY
-                        a.btn.btn-dark(href="./productDetails.html") XEM CHI TIẾT
+        
 
 mixin detailProduct()
     each item in detailProduct

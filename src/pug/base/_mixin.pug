@@ -81,8 +81,8 @@ mixin dataBreadcrumb(level1, level2, level3=false)
                     a(href='#')= level2
 
 
-mixin no-label-input-form(id, className=false, type=false, name=false, text)
-    input(id=`${id}` class=`${className}` type=`${type}` name=`${name}` placeHolder=`${text}`).form-control
+mixin no-label-input-form(id, className=false, type=false, name=false, text,value=false)
+    input(id=`${id}` class=`${className}` type=`${type}` name=`${name}` placeHolder=`${text}` value=`${value}`).form-control
 
 mixin label-input-form(labelFor, text, active=true, className=false, type=false, name=false)
     if active
@@ -100,11 +100,22 @@ mixin label-checkbox-form(text)
 
 mixin buttonForm(type, text="", link)
     if type == "button"
-        button(type=type class="btn-form").active
+        button(type=type class="btn-form" id=`${link}`).active
             a(href=link)=text
     else
-        button(type=type class="btn-form")= text           
-             
+        button.btn-form(type=type class=`${link}` id=`${link}`)= text           
+
+mixin cartList(text,img,price)
+        .cart-item.p-3
+            img(src=img, alt="")
+            div.text-center
+                p.m-0= text
+                p.m-0
+                    span 1 x 
+                    span.price= price
+            a(href="#")
+                i.far.fa-times-circle
+
 mixin tableContent()
     .table-responsive
         table.table.table-bordered
@@ -112,19 +123,5 @@ mixin tableContent()
                 tr
                     each item in tableCartTitle
                         th(scope='col')= item
-            tbody
-                each item in tableCartProductData
-                    tr
-                        th(scope='row')= item.id
-                        td
-                            img(src=`./assets/images/products/${item.productImg}`, alt="product img", srcset="")
-                        td= item.name
-                        td
-                            strong.font-large= item.price
-                        td
-                            span= item.qty
-                        td
-                            strong.font-large= item.total
-                        td
-                            a(href="#")
-                                i(class=`${item.iconDel} font-large font-large--red`) 
+            tbody.show-cart
+    

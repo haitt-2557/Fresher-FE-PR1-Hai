@@ -37,11 +37,9 @@
       color: $primary-2;
     }
   }
-  &:hover {
-    .main__product-btn {
-      margin-top: 0.5rem;
-      margin-bottom: 0;
-    }
+  .main__product-btn {
+    margin-top: 0.5rem;
+    margin-bottom: 0;
   }
   &-btn {
     gap: 1rem;
@@ -49,12 +47,14 @@
     margin-top: 4.5rem;
     @include flex("", center, center);
     @include transition();
-    a {
-      @include font-size(13);
-      width: 10rem;
+    button {
+      @include font-size(12);
       border-radius: unset;
       @include flex("", center, center);
-      color: $primary-3 !important;
+      color: $primary-3;
+      a {
+        color: $primary-3 !important;
+      }
       &:hover {
         color: $primary-3;
         opacity: 0.6;
