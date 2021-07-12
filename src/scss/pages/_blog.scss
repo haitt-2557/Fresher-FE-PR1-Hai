@@ -35,15 +35,17 @@
 }
 
 .newsFilter {
-  margin-top: 2.5rem;
-  .newsFilter-title {
+  margin-top: 1.5rem;
+  .flex-wrap {
+    @include border(false, 0.08, solid, $gray-2-border);
+  }
+  .filter--title {
     @include text-weight(13, 600);
-    color: $primary-2;
     padding: 1.5rem 1rem;
+    color: $primary-2;
   }
   ul {
     padding: 1rem;
-    @include border-boxShadow();
     li {
       margin-right: 1rem;
       margin-bottom: 0.5rem;
