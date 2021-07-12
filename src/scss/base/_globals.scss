@@ -198,9 +198,21 @@ button.btn-form {
   }
 }
 
-.newsFilter-title {
-  @include text-weight(13, 600);
-  padding: 1.5rem 1rem;
-  color: $primary-2;
+.filter--title {
   background-color: $primary-1;
+  padding: 1rem 0;
+  color: $primary-2;
+  .collapse__filter {
+    padding: 1rem !important;
+  }
+}
+.collapse__filter {
+  color: $primary-2 !important;
+}
+
+.productHot__filter {
+  &:first-child {
+    margin-top: 0;
+  }
+  margin-top: 2rem;
 }

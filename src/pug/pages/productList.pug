@@ -11,12 +11,9 @@ block content
                 .row
                     .col-lg-3
                         .row
-                            +listFilter("DANH MỤC SẢN PHẨM", listFilter, "", "X")
-                            p.py-3.col-lg-12
-                            +listFilter("TÌM THEO MỨC GIÁ", softPrice, "", "Y")
-                            p.py-3.col-lg-12
-                            +listFilter("TÌM THEO MÀU SẮC", softPrice, "", "Z")
-                            p.py-3.col-lg-12
+                            +listFilter("DANH MỤC SẢN PHẨM", listFilter, "", "X")                            
+                            +listFilter("TÌM THEO MỨC GIÁ", softPrice, "", "Y")                            
+                            +listFilter("TÌM THEO MÀU SẮC", softPrice, "", "Z")                            
                             +listFilter("SẢN PHẨM KHUYẾN MÃI", softPrice, "Y", "")
                     .col-lg-9
                         .row.filter--list-product

@@ -136,7 +136,7 @@ mixin detailProduct()
                                         span.p-l Share
 
 mixin titleSection(type, title, id, id1, id2)
-    .titleSection.pb-5.d-flex.justify-content-between.align-items-center
+    .titleSection.pb-2.d-flex.justify-content-between.align-items-center
         .d-flex
             img(src="./assets/images/4-black-squares.svg", alt="").d-block
             h2.pl-2.m-0= title
@@ -193,7 +193,7 @@ mixin comment({img, name, date, content})
         .comment__img
             img.p-1.border(src=img, alt="person")
         .comment__content.pl-3
-            span.comment__content-name= name
+            a.comment__content-name= name
             .comment__content-date.d-flex.justify-content-between
                 span.text-span.font-italic= date
                 span.text-italic.font-italic Trả lời

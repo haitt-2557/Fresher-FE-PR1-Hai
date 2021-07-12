@@ -36,6 +36,11 @@
 
 .newsFilter {
   margin-top: 2.5rem;
+  .newsFilter-title {
+    @include text-weight(13, 600);
+    color: $primary-2;
+    padding: 1.5rem 1rem;
+  }
   ul {
     padding: 1rem;
     @include border-boxShadow();
@@ -59,12 +64,6 @@
       }
       cursor: pointer;
       text-transform: uppercase;
-    }
-  }
-  .image_gallery-item {
-    margin-right: 1.5rem;
-    img {
-      width: 6rem !important;
     }
   }
   @include for-size(lg) {

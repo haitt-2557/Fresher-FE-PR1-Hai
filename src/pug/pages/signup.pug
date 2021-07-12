@@ -10,27 +10,27 @@ block content
                 .row
                     .col-md-6.col-sm-12
                         .form-group
-                            +label-input-group("fullName", false, "input", "ipFullName", "Họ và tên", "u", true)                                    
+                            +label-input-form("u", "Họ và tên:", true, "fullName", false, false, "ipFullName")
                     .col-md-6.col-sm-12
                         .form-group
-                            +label-input-group("fullName", false, "input", "ipFullName", "Email", "u", true)                                    
+                            +label-input-form("u", "Email:", true, "fullName", false, false, "ipFullName") 
                     .col-md-6.col-sm-12
                         .form-group
-                            +label-input-group("fullName", false, "input", "ipFullName", "SĐT", "u", true)                                    
+                            +label-input-form("u", "Số điện thoại:", true, "fullName", false, false, "ipFullName")     
                     .col-md-6.col-sm-12
                         .form-group
-                            +label-input-group("fullName", false, "input", "ipFullName", "Địa chỉ", "u", true)                                                            
+                            +label-input-form("u", "Địa chỉ:", true, "fullName", false, false, "ipFullName")                                
                     .col-12
                         .form-check
-                            +labelCheckboxForm("Đăng ký nhận tin tức qua email")                                
+                            +label-checkbox-form("Đăng ký nhận tin tức qua email")                                
                     .col-12
                         h2 Thông tin đăng nhập
                     .col-md-6.col-sm-12
                         .form-group
-                            +label-input-group("fullName", false, "input", "ipFullName", "Họ và tên", "u", true)                                    
+                           +label-input-form("u", "Tên đăng nhập:", true, "fullName", false, false, "ipFullName")                                
                     .col-md-6.col-sm-12
                         .form-group
-                            +label-input-group("fullName", false, "input", "ipFullName", "Mật khẩu", "u", true)                                    
+                           +label-input-form("u", "Email:", true, "fullName", false, false, "ipFullName")                                
                     .col-12
                         .button-group
                             +buttonForm("button","Quay lại","index.html")                            
