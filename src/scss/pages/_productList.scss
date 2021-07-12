@@ -13,6 +13,7 @@
     }
   }
   .listProducts__select {
+    margin-bottom: -1rem;
     &::after {
       content: "";
       position: absolute;
@@ -20,7 +21,6 @@
       top: 100%;
       left: 0;
       width: 100%;
-      @include border(bottom, 0.08, solid, $gray-2-border);
       padding: 0 15px;
       height: 2px;
       z-index: 1;
