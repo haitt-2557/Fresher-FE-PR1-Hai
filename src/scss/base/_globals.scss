@@ -89,7 +89,7 @@ button.btn-form {
   padding: 1rem;
   border: none;
   cursor: pointer;
-  @include buttonStyle(10rem, $primary-2, $primary-3);
+  @include buttonStyle(false, $primary-2, $primary-3);
   &:hover {
     @include hover($primary-1);
   }
@@ -97,6 +97,58 @@ button.btn-form {
     color: $primary-3;
     &:hover {
       @include hover(false, $primary-3);
+    }
+  }
+}
+
+.banner__images {
+  margin: 3rem 0;
+  img {
+    width: 100%;
+  }
+}
+
+.multiple__services-slider {
+  background: $gray-1;
+  margin: 3rem 0;
+  /* carousel */
+}
+
+a {
+  color: rgba(38, 137, 13, 1);
+
+  &:hover,
+  &:focus {
+    color: rgba(4, 106, 56, 1);
+  }
+}
+
+.table-responsive {
+  @include text13-weight(600);
+  .table thead th {
+    vertical-align: middle !important;
+    text-align: center;
+  }
+  .font-large {
+    @include text-weight(14, 600);
+    &--red {
+      color: $red;
+    }
+  }
+  tbody {
+    span {
+      padding: 1rem;
+      @include border(false, 0.08, solid, $gray-2-border);
+    }
+    tr {
+      text-align: center !important;
+      img {
+        width: 10rem;
+      }
+    }
+    th,
+    td {
+      vertical-align: middle;
     }
   }
 }
