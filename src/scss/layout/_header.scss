@@ -6,7 +6,6 @@
     @include display(none);
     height: 100px;
   }
-
   .navbar-nav.mr-auto.justify-content-end.navbar-nav--right {
     flex: $flex-1;
   }
@@ -17,7 +16,6 @@
 
     @include border(bottom, 0.08, solid, $gray-2-border);
   }
-
   #navbarText {
     @include font-size(13, false);
     font-weight: 600;
@@ -92,7 +90,6 @@
       @include active($primary-2, false);
       border: none !important;
     }
-
     .nav__menu-item {
       @include font-size(13);
       @include display(inline-block);
@@ -113,7 +110,6 @@
         background: none;
       }
     }
-
     a.cart {
       color: $primary-3;
     }
@@ -133,16 +129,13 @@
     .logo-mobile-tablet-show {
       @include display(block, false, center, false);
     }
-
     .header__bottom {
       display: none;
     }
-
     .wrapper-menu {
       @include display(flex, false, center, false);
       line-height: 2rem;
     }
-
     .navbar-nav--right {
       @include border(left, 0.08, solid, $gray-2-border);
     }
@@ -152,15 +145,12 @@
     .logo-mobile-tablet-show {
       @include display(block, false, center, false);
     }
-
     .header__bottom {
       display: none;
     }
-
     .wrapper-menu {
       @include display(none, false, false, false);
     }
-
     .wrapper-shopping-cart {
       @include display(none, false, false, false);
     }

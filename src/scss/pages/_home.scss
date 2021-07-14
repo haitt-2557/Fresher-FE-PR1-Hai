@@ -4,21 +4,15 @@
 
 .product__view {
   h2 {
-    @include title-h2-w-icon();
+    @include title-h2-w-mx(true);
   }
 }
 .product__view-left {
   .list__categories-vertical {
-    //border($direction: false, $width: 0, $style: null, $color: null)
     @include border(top, 0.08, solid, $gray-2-border);
     @include border(right, 0.08, solid, $gray-2-border);
     @include border(left, 0.08, solid, $gray-2-border);
-    .active {
-      @include active($primary-1);
-      & > a {
-        @include active(false, $primary-2);
-      }
-    }
+
     .item-cate a {
       @include border(bottom, 0.08, solid, $gray-2-border);
       color: $gray-6;
@@ -28,9 +22,12 @@
         margin-left: 1rem;
       }
     }
-  }
-}
-.product__view-right {
-  .right__product-slider {
+
+    .item-cate:hover {
+      @include hover($primary-1);
+      & > a {
+        @include active(false, $primary-2);
+      }
+    }
   }
 }

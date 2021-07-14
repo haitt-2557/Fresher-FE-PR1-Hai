@@ -120,7 +120,6 @@
   font-weight: bold;
   display: flex;
   text-transform: uppercase;
-  // margin: 1rem 0;
 }
 
 @mixin flex-direction($width, $height: false) {
@@ -140,10 +139,15 @@
   color: #{$c};
 }
 
-@mixin title-h2-w-icon() {
-  @include font-bold-upper();
-  @include font-size(13);
-  margin-left: 1rem;
+@mixin title-h2-w-mx($mr-l: false) {
+  @if $mr-l {
+    @include font-bold-upper();
+    @include font-size(13);
+    margin-left: 1rem;
+  } @else {
+    @include font-bold-upper();
+    @include font-size(13);
+  }
 }
 
 @mixin arrowSliderMultipleProduct($f, $lineHeight: false) {

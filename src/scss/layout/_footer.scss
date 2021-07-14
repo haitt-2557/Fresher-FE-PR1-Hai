@@ -42,7 +42,7 @@
     }
     .title {
       h2 {
-        @include title-h2-w-icon();
+        @include title-h2-w-mx(true);
       }
       i {
         @include font-size(12, true);

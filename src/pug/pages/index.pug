@@ -21,33 +21,29 @@ block content
                                 i.fas.fa-chevron-left
                             a.carousel-control-next(href='#demo' data-slide='next').justify-content-end
                                 i.fas.fa-chevron-right
-
                     .col-md-4.slider-right
                         .slider-right__services                                    
-                                +sliderShowServices()
-            
+                                +sliderShowServices()            
             section.product__view
-                .row.no-guttters                                        
+                .row.no-guttters.align-items-center
+                    .col-md-3.col-sm-3            
+                        +listTitleProductCategoriesvertical("Sản phẩm nổi bật")                     
+                    .col-md-9.col-sm-9
                         .controls-top.d-flex.justify-content-end
-                                        a.btn-floating(href='#multi-item-example' data-slide='prev').arrow-left.active
-                                            i.fa.fa-chevron-left
-                                        a.btn-floating(href='#multi-item-example' data-slide='next').arrow-right
-                                            i.fa.fa-chevron-right                                                                                
-                        +listTitleProductCategoriesvertical("Sản phẩm nổi bật")
+                            a.btn-floating(href='#multi-item-example' data-slide='prev').arrow-left.active
+                                i.fa.fa-chevron-left
+                            a.btn-floating(href='#multi-item-example' data-slide='next').arrow-right
+                                i.fa.fa-chevron-right                                                                                
                 .row.no-guttters
                     .col-md-3
-                        .product__view-left                                                         
-                            
-                                                        
+                        .product__view-left                                                                       
                             +listProductCategoriesVertical()
                     .col-md-9
                         .product__view-right
                             .right__product-slider  
                                 // Carousel Wrapper carousel.slide.carousel-multi-item(data-ride='carousel')
                                 #multi-item-example                                                                                                    
-                                    // Slides
                                     .carousel-inner(role='listbox')
-                                        // First slide
                                         .carousel-item.active
                                             .row
                                                 .col-md-4                            
@@ -113,8 +109,6 @@ block content
                                                             | Some quick example text to build on the card title and make up the bulk of the
                                                             | card's content.
                                                             a.btn.btn-primary Button
-                                        // /.First slide
-                                        // Second slide
                                         .carousel-item
                                             .row
                                                 .col-md-4                                                    
@@ -177,7 +171,6 @@ block content
                                                             | Some quick example text to build on the card title and make up the bulk of the
                                                             | card's content.
                                                             a.btn.btn-primary Button
-                                        // Third slide
                                         .carousel-item
                                             .row
                                                 .col-md-4                                                    
@@ -239,8 +232,5 @@ block content
                                                             p.card-text
                                                             | Some quick example text to build on the card title and make up the bulk of the
                                                             | card's content.
-                                                            a.btn.btn-primary Button
-                                        // /.Third slide
-                                        // /.Slides
-                                    // /.Carousel Wrapper
+                                                            a.btn.btn-primary Button                                    
 
