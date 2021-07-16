@@ -114,8 +114,48 @@ mixin inputCheckboxForm()
     input#flexCheckDefault.form-check-input(type='checkbox' value='')
 
 mixin buttonForm(type,text=false,link)
-    if type=="button"
+    if type == "button"
         button(type=type class="btn-form").active
             a(href=link)=text
     else
         button(type=type class="btn-form")= text           
+
+mixin bannerImage(num)
+    if num == 2
+        each item in bannerImg 
+            .col-md-6.col-sm-12
+                a(href="#").banner__image-content
+                    img(src=`./assets/images/banner/${item.img}`) 
+    if num == 1
+            .col-12
+                a(href="#").banner__image-content
+                    img(src=`./assets/images/banner/3.png alt="logo banner"`) 
+
+mixin bannerServices()
+    each val in bannerServices     
+        div
+            img(alt='Test' src=`./assets/images/logo-1/${val}`)
+
+mixin tableContent()
+    .table-responsive
+        table.table.table-bordered
+            thead
+                tr
+                    each item in tableCartTitle
+                        th(scope='col')= item
+            tbody
+                each item in tableCartProductData
+                    tr
+                        th(scope='row')= item.id
+                        td
+                            img(src=`./assets/images/products/${item.productImg}`, alt="product img", srcset="")
+                        td= item.name
+                        td
+                            strong.font-large= item.price
+                        td
+                            span= item.qty
+                        td
+                            strong.font-large= item.total
+                        td
+                            a(href="#")
+                                i(class=`${item.iconDel} font-large font-large--red`) 
