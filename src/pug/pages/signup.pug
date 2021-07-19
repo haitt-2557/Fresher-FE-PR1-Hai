@@ -1,5 +1,6 @@
 extends ../base/_base.pug
-
+block variables
+    - var titleHTMl = 'Đăng ký'
 block content
     .container
         +dataBreadcrumb("Trang chủ","Đăng ký")
@@ -9,35 +10,27 @@ block content
                 .row
                     .col-md-6.col-sm-12
                         .form-group
-                            +labelForm("u","Họ và tên:",true)
-                            +inputForm("fullName",false,false,"ipFullName")
+                            +label-input-group("fullName", false, "input", "ipFullName", "Họ và tên", "u", true)                                    
                     .col-md-6.col-sm-12
                         .form-group
-                            +labelForm("u","Email:",true)
-                            +inputForm("Email",false,false,"ipFullName")
+                            +label-input-group("fullName", false, "input", "ipFullName", "Email", "u", true)                                    
                     .col-md-6.col-sm-12
                         .form-group
-                            +labelForm("u","Số điện thoại:",true)
-                            +inputForm("fullName",false,false,"ipFullName")
+                            +label-input-group("fullName", false, "input", "ipFullName", "SĐT", "u", true)                                    
                     .col-md-6.col-sm-12
                         .form-group
-                            +labelForm("u","Địa chỉ:",true)
-                            input#pwd.form-control(type='email' name='email')
+                            +label-input-group("fullName", false, "input", "ipFullName", "Địa chỉ", "u", true)                                                            
                     .col-12
                         .form-check
-                                +inputCheckboxForm()
-                                label.form-check-label(for='flexCheckDefault')
-                                    | Đăng ký nhận tin tức qua email
+                            +labelCheckboxForm("Đăng ký nhận tin tức qua email")                                
                     .col-12
                         h2 Thông tin đăng nhập
                     .col-md-6.col-sm-12
                         .form-group
-                            +labelForm("u","Họ và tên:",true)
-                            +inputForm("fullName",false,false,"ipFullName")
+                            +label-input-group("fullName", false, "input", "ipFullName", "Họ và tên", "u", true)                                    
                     .col-md-6.col-sm-12
                         .form-group
-                            +labelForm("u","Email:",true)
-                            +inputForm("fullName",false,false,"ipFullName")
+                            +label-input-group("fullName", false, "input", "ipFullName", "Mật khẩu", "u", true)                                    
                     .col-12
                         .button-group
                             +buttonForm("button","Quay lại","index.html")                            

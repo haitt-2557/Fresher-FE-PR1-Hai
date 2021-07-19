@@ -65,22 +65,7 @@ mixin sliderShowServices()
                 h2= item.title
                 p= item.text
 
-mixin listTitleProductCategoriesvertical(name)
-    .title-product-cate.d-flex.align-items-center.py-4
-        div.icon-4-square-size
-            img(src=`./assets/images/4-black-squares.svg`, alt="Logo")
-        h2= name
-
-mixin listProductCategoriesVertical()
-    ul.list__categories-vertical
-        each item in dataListProductCategoriesVertical
-            li.item-cate(class=`${item.active}`)
-                a(href='#' target='_blank').d-flex.align-items-center
-                    div.icon-4-square-size
-                        i(class=`${item.icon}`)
-                    span= item.text
-
-mixin dataBreadcrumb(level1,level2,level3=false)
+mixin dataBreadcrumb(level1, level2, level3=false)
     nav(aria-label='breadcrumb')
         ol.breadcrumb
             if level3
@@ -95,47 +80,28 @@ mixin dataBreadcrumb(level1,level2,level3=false)
                 li.breadcrumb-item
                     a(href='#')= level2
 
-mixin labelForm(labelFor,text,active=true)
+mixin label-input-group(id, className=false, type=false, name=false, text=false, labelFor, active=true)
     if active
         label(for=labelFor)
             strong= text 
             span *
     else
         label(for=labelFor class="label-form")= text
+    input(id=`${id}` class=`${className}` type=`${type}` name=`${name}` placeHolder=`${text}`).form-control
+
 
 mixin labelCheckboxForm(text)
-    label.form-check-label(for='flexCheckDefault')
-        strong= text
-
-mixin inputForm(id,className=false,type=false,name=false)
-    input(id=id class=className).form-control(type=type name=name)
-
-mixin inputCheckboxForm()
     input#flexCheckDefault.form-check-input(type='checkbox' value='')
+    label.form-check-label(for='flexCheckDefault')
+        strong= text    
 
-mixin buttonForm(type,text=false,link)
+mixin buttonForm(type,text="",link)
     if type == "button"
         button(type=type class="btn-form").active
             a(href=link)=text
     else
         button(type=type class="btn-form")= text           
-
-mixin bannerImage(num)
-    if num == 2
-        each item in bannerImg 
-            .col-md-6.col-sm-12
-                a(href="#").banner__image-content
-                    img(src=`./assets/images/banner/${item.img}`) 
-    if num == 1
-            .col-12
-                a(href="#").banner__image-content
-                    img(src=`./assets/images/banner/3.png alt="logo banner"`) 
-
-mixin bannerServices()
-    each val in bannerServices     
-        div
-            img(alt='Test' src=`./assets/images/logo-1/${val}`)
-
+             
 mixin tableContent()
     .table-responsive
         table.table.table-bordered

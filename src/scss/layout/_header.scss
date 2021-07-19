@@ -88,7 +88,7 @@
     background: $primary-1;
     .active {
       @include active($primary-2, false);
-      border: none !important;
+      border: none;
     }
     .nav__menu-item {
       @include font-size(13);

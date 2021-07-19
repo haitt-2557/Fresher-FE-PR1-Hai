@@ -12,4 +12,16 @@ $gray-6: #8e8686;
 $blue-1: #0685ca;
 $red: #ff0000;
 $orange: orange;
+
+$green: green;
 $flex-1: 1;
+
+$breakpoints: (
+  sm: 576px,
+  mdC: 767px,
+  md: 768px,
+  normal: 991px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
