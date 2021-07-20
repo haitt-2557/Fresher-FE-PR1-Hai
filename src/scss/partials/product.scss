@@ -2,7 +2,6 @@
   height: 300px;
   position: relative;
   z-index: 100;
-
   &-inner {
     @include border(false, 0.1, solid, $gray-2-border);
     padding-bottom: 2rem;
@@ -63,6 +62,7 @@
     }
   }
 }
+
 .main__productOther {
   padding-bottom: 2rem;
   &-inner {
@@ -109,11 +109,8 @@
     }
   }
 }
+
 .main__detailProduct {
-  .detail__product-img {
-    &-list {
-    }
-  }
   .detail__product-content {
     .detailReview {
       &::before {

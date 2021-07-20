@@ -1,15 +1,14 @@
-include ../data/_data.pug
 block variables
-    - var options = detailProduct[0].size
-mixin product({img,name,gia,danhGia,content,stars},type)
+include ../data/_data.pug
+mixin product({img, name, gia, danhGia, content, stars}, type)
     if type != "Y"
         .main__product
             .main__product-inner
                 .main__product-img
                     img(src=img, alt="product")
                 .main__product-content.text-center
-                    p.price= `${gia} Đ`
-                    p.main__product-content-title= name
+                    span.price= `${gia} Đ`
+                    h2.main__product-content-title= name
                     .d-flex.justify-content-center
                         ul.d-flex
                             - var i = 1;
@@ -29,14 +28,14 @@ mixin product({img,name,gia,danhGia,content,stars},type)
                         span.pb-3.text-span.font-italic.pl-1= `( ${danhGia} đánh giá )`
                 .main__product-btn.d-flex.px-2
                     a.btn.btn-warning MUA NGAY
-                    a.btn.btn-dark(href="./detailProduct.html") XEM CHI TIẾT
+                    a.btn.btn-dark(href="./productDetails.html") XEM CHI TIẾT
     else
         .main__productOther
             .main__productOther-inner
                 .main__productOther-img
                     img(src=img, alt="product")
                 .main__productOther-content
-                    p.main__productOther-content-title= name
+                    h2.main__productOther-content-title= name
                     .d-flex
                         ul.d-flex
                             - var i = 1;
@@ -54,12 +53,12 @@ mixin product({img,name,gia,danhGia,content,stars},type)
                                     i.far.fa-star
                                     - i++
                         span.text-span.font-italic.pl-1= `( ${danhGia} đánh giá )`
-                    p.text-span.productOther-content-text.text-clamp.text-clamp--2= content
-                    p.price= `${gia} Đ`
+                    p.line-clamp.text-span.productOther-content-text= content
+                    span.price= `${gia} Đ`
 
                     .main__product-btn.d-flex.justify-content-start
                         a.btn.btn-warning MUA NGAY
-                        a.btn.btn-dark(href="./detailProduct.html") XEM CHI TIẾT
+                        a.btn.btn-dark(href="./productDetails.html") XEM CHI TIẾT
 
 mixin detailProduct()
     each item in detailProduct
@@ -68,7 +67,7 @@ mixin detailProduct()
                 .row
                     .col-lg-6.col-md-12
                         .detail__product-img
-                            img(src="./assets/images/products/2_1.png", alt="")
+                            img(src="./assets/images/products/2_1.png", alt="details product")
                             .detail__product-img-list
                                 ul.d-flex
                                     - var imgDetail = 0
@@ -77,8 +76,8 @@ mixin detailProduct()
                                             img.border(src=`./assets/images/products/${imgDetail}.png`, alt="img productDetail")
                     .col-lg-6.col-md-12
                         .detail__product-content
-                            p= item.name
-                            .d-flex
+                            h2= item.name
+                            .d-flex.align-items-center
                                 ul.d-flex
                                     - var i = 1;
                                     while i <= item.stars
@@ -95,20 +94,19 @@ mixin detailProduct()
                                             i.far.fa-star
                                             - i++
                                 span.text-span.font-italic.pl-1.detailReview.position-relative= `( ${item.review} đánh giá )`
-                                span.pl-5.font-italic
-                                    u Gửi bình luận của bạn
-                            p.price.border-bottom.pb-3= `GYN: ${item.price} Đ`
-                            p.py-3 Thông tin sản phẩm :
+                                span.pl-5.font-italic Gửi bình luận của bạn
+                            span.price.border-bottom.pb-3= `GYN: ${item.price} Đ`
+                            p.py-3.title Thông tin sản phẩm :
                                 p.text-span= item.info
                             form(action="#").form-inline.justify-content-between.border-bottom.pb-3
                                 .form-group.d-flex.flex-column.align-items-start.w-50.pr-2
-                                    label(for="selectProduct").mr-2 Size :
+                                    label(for="selectProduct" class="title").mr-2 Size :
                                     select.rounded-0.custom-select.form-control#selectProduct.pr-2.w-100(name="selectProduct") 
                                         option --Chọn size--
                                         each option in options
                                                 option(value=`${option}`)= option
                                 .form-group.d-flex.flex-column.align-items-start.w-50.pl-2
-                                    label(for="selectProduct").mr-2 Màu sắc :
+                                    label(for="selectProduct" class="title").mr-2 Màu sắc :
                                     select.rounded-0.custom-select.form-control#selectProduct.w-100.pr-2(name="selectProduct") 
                                         option --Chọn màu--
                                         each option in options
@@ -116,25 +114,23 @@ mixin detailProduct()
                             form(action="#").form-inline.py-3.detail__product-content-buy
                                 .form-group
                                     .input-group.pr-2
-                                        input(type="text" value=1).form-control.w-25
-                                        .input-group-append
-                                            select.rounded-0.custom-select
+                                        input(type="number" value="1").form-control.w-25                                        
                                     button.rounded-0.btn.btn-warning.text-white Mua ngay
-                            .detail__product-content-social.d-flex.justify-content-between
+                            .detail__product-content-social.d-flex.justify-content-between.align-items-center
                                 .content-social-left
-                                    a(href="#").text-white.fb.p-1
+                                    a(href="#").text-white.fb
                                         i.fab.fa-facebook-square
                                         span.pl-1 Like
                                     .social-tooltip 0
-                                    a(href="#").text-white.ml-2.tw.p-1
+                                    a(href="#").text-white.ml-2.tw
                                         i.fab.fa-twitter-square
                                         span.pl-1 Twitter
-                                    a(href="#").price.gg.border.pl-2.ml-2
+                                    a(href="#").gg.border.pl-2.ml-2
                                         i.fab.fa-google-plus-g
                                         span.pl-1 1
                                     .social-tooltip 0
                                 .content-social-right
-                                    a(href="#").ggPlus.border.text-white.p-1
+                                    a(href="#").ggPlus.border.text-white
                                         i.fas.fa-plus-square.pr-1
                                         span.p-l Share
 
@@ -142,7 +138,7 @@ mixin titleSection(type, title, id, id1, id2)
     .titleSection.pb-5.d-flex.justify-content-between.align-items-center
         .d-flex
             img(src="./assets/images/4-black-squares.svg", alt="").d-block
-            p.pl-2.m-0= title
+            h2.pl-2.m-0= title
         .d-flex
             if type == "Y"
                 .d-flex.listTab
@@ -157,3 +153,49 @@ mixin titleSection(type, title, id, id1, id2)
                         i.fas.fa-caret-left
                     a.ml-1(href=`#${title == 1 ? 'carouselProduct'+id :`${title==2 ? 'carouselProduct'+id1 : 'carouselProduct'+id2}`}` data-slide="next")
                         i.fas.fa-caret-right
+
+mixin news({img, title, date, author, comment, content})
+    .news__content
+        .news__inner
+            .img-news
+                img(src=img, alt="news")
+            h6.pt-3= title
+            .news-info.d-flex.font-italic
+                span.text-span.pr-3= date
+                p.text-span
+                    i.fas.fa-user
+                    span.px-1 Đăng bởi
+                    a(href="#").pr-3= author
+                p.text-span
+                    i.fas.fa-comments
+                    span=`${comment} bình luận`
+            .news-text.text-span
+                p= content
+                    a(href="./blogDetails.html").font-0 [Đọc tiếp]
+
+mixin pagination()
+        nav(aria-label='Page navigation example')
+            ul.pagination.justify-content-end.pagination-custom
+                li.page-item.disabled
+                    a.page-link(href='#', tabindex='-1') Trang trước
+                li.page-item.active
+                    a.page-link(href='#') 1
+                li.page-item
+                    a.page-link(href='#') 2
+                li.page-item
+                    a.page-link(href='#') 3
+                li.page-item
+                    a.page-link(href='#') Trang cuối
+
+mixin comment({img, name, date, content})
+    .comment.d-flex.justify-content-between
+        .comment__img
+            img.p-1.border(src=img, alt="person")
+        .comment__content.pl-3
+            span.comment__content-name= name
+            .comment__content-date.d-flex.justify-content-between
+                span.text-span.font-italic= date
+                span.text-italic.font-italic Trả lời
+            .comment__content-text
+                p.line-clamp= content
+            

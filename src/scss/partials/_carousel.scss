@@ -10,6 +10,7 @@
     }
   }
 }
+
 .carouselProduct {
   @include for-size(lg) {
     padding-top: 2rem;
@@ -35,12 +36,14 @@
     }
   }
 }
+
 .desktopCarousel {
   display: block;
   @include for-size(normal, down) {
     display: none;
   }
 }
+
 .btnDesktop {
   @extend .desktopCarousel;
 }
@@ -54,14 +57,17 @@
     display: none;
   }
 }
+
 .btnLaptop {
   @extend .laptopCarousel;
 }
+
 .mobileCarousel {
   @include for-size(mdC, up) {
     display: none;
   }
 }
+
 .btnMobile {
   @extend .mobileCarousel;
 }
