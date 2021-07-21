@@ -1,5 +1,6 @@
 block variables
 include ../data/_data.pug
+    - var options = detailProduct[0].size
 mixin product({img, name, gia, danhGia, content, stars}, type)
     if type != "Y"
         .main__product
@@ -95,7 +96,7 @@ mixin detailProduct()
                                             - i++
                                 span.text-span.font-italic.pl-1.detailReview.position-relative= `( ${item.review} đánh giá )`
                                 span.pl-5.font-italic Gửi bình luận của bạn
-                            span.price.border-bottom.pb-3= `GYN: ${item.price} Đ`
+                            span.price.pb-3= `GYN: ${item.price} Đ`
                             p.py-3.title Thông tin sản phẩm :
                                 p.text-span= item.info
                             form(action="#").form-inline.justify-content-between.border-bottom.pb-3
