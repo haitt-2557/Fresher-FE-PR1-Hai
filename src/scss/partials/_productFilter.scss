@@ -1,7 +1,4 @@
 .productHot__filter {
-  .collapse__filter {
-    color: $primary-2;
-  }
   .listFilter {
     @include border-boxShadow();
     @include text13-weight(600);
@@ -11,6 +8,7 @@
       color: $primary-2;
       .collapse__filter {
         padding: 1rem !important;
+        color: $primary-2;
       }
     }
     i {

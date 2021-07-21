@@ -2,16 +2,6 @@
 @import "../base/mixins";
 
 .listProducts__categories {
-  .pagination-custom {
-    .page-item.active .page-link {
-      @include active($primary-2, $primary-3);
-      @include border(false, 0.08, solid, $gray-2-border);
-    }
-
-    a {
-      color: $primary-1;
-    }
-  }
   .listProducts__select {
     margin-bottom: -1rem;
     &::after {
