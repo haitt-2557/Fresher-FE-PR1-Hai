@@ -36,14 +36,12 @@
     }
   }
 }
-
 .desktopCarousel {
   display: block;
   @include for-size(normal, down) {
-    display: none;
+    display: none !important;
   }
 }
-
 .btnDesktop {
   @extend .desktopCarousel;
 }

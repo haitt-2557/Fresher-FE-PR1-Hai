@@ -110,59 +110,47 @@
   }
 }
 
-.main__detailProduct {
-  .detail__product-content {
-    .detailReview {
-      &::before {
-        content: "";
-        position: absolute;
-        @include border(right, 0.08, solid, $gray-2-border);
-        top: 12%;
-        right: -20%;
-        height: 2rem;
-      }
+.titleSection {
+  p {
+    @include font-size(16);
+    @include for-size(md) {
+      @include font-size(13);
     }
-    &-buy {
-      input {
-        width: 7rem;
-      }
+  }
+  img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .listTab {
+    gap: 0.5rem;
+    text-transform: uppercase;
+    @include for-size(normal) {
+      display: none !important;
     }
-    &-social {
-      .social-tooltip {
-        display: inline-flex;
-        justify-content: center;
-        align-items: center;
-        height: 2rem;
-        width: 2rem;
-        background-color: $gray-6;
-        border-radius: 0.3rem;
+    a {
+      @include border(false, 0.08, solid, $gray-2-border);
+      width: 12rem;
+      color: $gray-5;
+      @include text-weight(12, 500);
+      padding: 0.5rem;
+      &:hover {
+        background-color: $primary-2;
         color: $primary-3;
-        position: relative;
-        &::after {
-          content: "";
-          position: absolute;
-          left: -0.6rem;
-          top: 50%;
-          transform: translateY(-50%);
-          box-sizing: border-box;
-          @include border(top, 0.3, solid, transparent);
-          @include border(bottom, 0.3, solid, transparent);
-          @include border(left, 0.3, solid, transparent);
-          @include border(right, 0.3, solid, $gray-4);
-        }
       }
     }
-    .fb {
-      background-color: $blue-1;
-    }
-    .tw {
-      background-color: $green;
-    }
-    .gg {
-      padding: 0.3rem;
-    }
-    .ggPlus {
-      background-color: $red;
+  }
+  .titleSection__btn {
+    padding-left: 1rem;
+    @include font-size(20);
+    a {
+      display: inline-block;
+      padding: 0.001rem 0.9rem;
+      @include border(false, 0.08, solid, $gray-2-border);
+      color: $gray-2-border;
+      &:hover {
+        background-color: $primary-1;
+        color: $primary-3;
+      }
     }
   }
 }
