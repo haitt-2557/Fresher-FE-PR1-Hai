@@ -22,12 +22,12 @@ mixin text-title-w-icon(title)
         img(src=`./assets/images/4-black-squares.svg`, alt="Logo")
     h2= title
 
-mixin footerTopAboutUS(classIcon,text)
+mixin footerTopAboutUS(classIcon, text)
     .about
         i(class=`${classIcon}`)
         p= text
 
-mixin footerTopServiceList(data,haveicon)
+mixin footerTopServiceList(data, haveicon)
     if  haveicon 
         each item in data
             .wrapper-list-item
@@ -80,7 +80,11 @@ mixin dataBreadcrumb(level1, level2, level3=false)
                 li.breadcrumb-item
                     a(href='#')= level2
 
-mixin label-input-group(id, className=false, type=false, name=false, text=false, labelFor, active=true)
+
+mixin no-label-input-form(id, className=false, type=false, name=false, text)
+    input(id=`${id}` class=`${className}` type=`${type}` name=`${name}` placeHolder=`${text}`).form-control
+
+mixin label-input-form(labelFor, text, active=true, className=false, type=false, name=false)
     if active
         label(for=labelFor)
             strong= text 
@@ -89,7 +93,8 @@ mixin label-input-group(id, className=false, type=false, name=false, text=false,
         label(for=labelFor class="label-form")= text
     input(id=`${id}` class=`${className}` type=`${type}` name=`${name}` placeHolder=`${text}`).form-control
 
-mixin labelCheckboxForm(text)
+mixin label-checkbox-form(text)   
+    input#flexCheckDefault.form-check-input(type='checkbox' value='')
     label.form-check-label(for='flexCheckDefault')
         strong= text
 
@@ -101,7 +106,7 @@ mixin labelCheckboxForm(text)
     label.form-check-label(for='flexCheckDefault')
         strong= text    
 
-mixin buttonForm(type,text="",link)
+mixin buttonForm(type,text="", link)
     if type == "button"
         button(type=type class="btn-form").active
             a(href=link)=text

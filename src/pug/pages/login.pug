@@ -11,15 +11,15 @@ block content
                     form(action='error-page.html')
                         .row
                             .col-12
-                                .form-group                                
-                                    +label-input-group("fullName", false, "input", "ipFullName", "Họ và tên", "u", true)                                    
+                                .form-group
+                                    +label-input-form("u", "Họ và tên:", true, "fullName", false, false, "ipFullName")                                    
                             .col-12
                                 .form-group
-                                    +label-input-group("fullName", false, "email", "ipFullName", "Email", "u", true)                                    
+                                    +label-input-form("u", "Email:", true, "fullName", false, false, "ipFullName")                                   
                             .col-12
                                 .form-check.d-flex.justify-content-between
                                     .left
-                                        +labelCheckboxForm("Ghi nhớ mật khẩu")
+                                        +label-checkbox-form("Ghi nhớ mật khẩu")                                        
                                     .right
                                         a(href="#").forgotpw  Bạn quên mật khẩu?
                             .col-12

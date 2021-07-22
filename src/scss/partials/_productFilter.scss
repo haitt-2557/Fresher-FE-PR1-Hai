@@ -1,109 +1,71 @@
-.productHot__filter {
-  .listFilter {
-    @include border-boxShadow();
-    @include text13-weight(600);
-    .filter--title {
-      background-color: $primary-1;
-      padding: 1rem 0;
-      color: $primary-2;
-      .collapse__filter {
-        padding: 1rem !important;
-        color: $primary-2;
-      }
-    }
-    i {
-      display: inline-block;
-    }
-    .filter__item {
-      list-style: none !important;
-      color: $gray-3;
-      padding: 1.2rem;
-      line-height: 2rem;
-      @include for-size(normal) {
-        display: none;
-      }
-      cursor: pointer;
-      text-transform: uppercase;
-      &:hover {
-        @include hover($primary-2, $primary-3);
-      }
-      .filterColor {
-        display: inline-block;
-        width: 2rem;
-        height: 2rem;
-      }
-    }
-    .filter__discount {
-      @include for-size(normal) {
-        display: none;
-      }
-      cursor: pointer;
-      .d-flex {
-        padding: 0.5rem;
-        img {
-          height: 6rem;
-          width: auto;
-        }
-      }
-    }
+.listFilter {
+  @include border-boxShadow();
+  @include text13-weight(600);
+  i {
+    display: inline-block;
   }
-  .filter--title {
-    a {
+  .filter__item {
+    list-style: none !important;
+    color: $gray-3;
+    padding: 1.2rem;
+    line-height: 2rem;
+    @include for-size(normal) {
       display: none;
-      @include for-size(normal) {
-        display: inline-block;
-      }
+    }
+    cursor: pointer;
+    text-transform: uppercase;
+    &:hover {
+      @include hover($primary-2, $primary-3);
+    }
+    .filterColor {
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
     }
   }
-  .filter {
-    .filter__item {
-      color: $gray-3;
-      cursor: pointer;
-      &:hover {
-        color: $primary-2 !important;
-      }
-      .filterColor {
-        display: inline-block;
-        width: 2rem;
-        height: 2rem;
-      }
+  .filter__discount {
+    @include for-size(normal) {
+      display: none;
     }
-    .filter__discount {
-      cursor: pointer;
-      .d-flex {
-        padding: 0.5rem;
-        justify-content: space-around;
-        img {
-          height: 10rem;
-          width: auto;
-        }
+    cursor: pointer;
+    .d-flex {
+      padding: 0.5rem;
+      img {
+        height: 6rem;
+        width: auto;
       }
     }
   }
 }
-
-.newsFilter {
-  @include for-size(lg) {
+.filter--title {
+  a {
     display: none;
-  }
-  .newsTag {
-    border-color: $primary-1 !important;
-    color: $gray-5;
-    &:hover {
-      background-color: $primary-1;
-      color: $primary-3;
+    @include for-size(normal) {
+      display: inline-block;
     }
   }
-  .news-img {
-    img {
-      width: 7.7rem !important;
-    }
-  }
-  li {
+}
+.filter {
+  .filter__item {
+    color: $gray-3;
     cursor: pointer;
     &:hover {
-      .newsList {
-        color: $primary-2;
+      color: $primary-2 !important;
+    }
+    .filterColor {
+      display: inline-block;
+      width: 2rem;
+      height: 2rem;
+    }
+  }
+  .filter__discount {
+    cursor: pointer;
+    .d-flex {
+      padding: 0.5rem;
+      justify-content: space-around;
+      img {
+        height: 10rem;
+        width: auto;
       }
     }
   }

@@ -1,0 +1,31 @@
+.blogDetails__content {
+  .blog__comments {
+    a {
+      @include text-weight(13, 600);
+      cursor: pointer;
+    }
+    span {
+      display: inline-block;
+      padding: 1rem 0;
+      @include text-weight(11, 600);
+    }
+  }
+  .comment {
+    .comment__content-text {
+      @include text-weight(12, 500);
+    }
+    .text-italic {
+      color: $primary-2;
+    }
+  }
+
+  .text-span {
+    @include text-weight(12, 500);
+  }
+  .text-tag {
+    @include text-weight(13, 500);
+  }
+  img {
+    width: 100%;
+  }
+}

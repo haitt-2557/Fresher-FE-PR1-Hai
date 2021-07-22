@@ -12,7 +12,7 @@ mixin listFilter(content,data,type,icon)
         div.filter(id = `filter${icon == "X" ? 1 : `${icon == "Y" ? 2 : `${icon =="Z" ? 3 : 4 }` }` }` class = "collapse")
             +filter(data,type,icon)
 
-mixin filter(data,type,icon)
+mixin filter(data, type, icon)
     - const bgColors = ["#e61010", "#f5bd10", "#0685ca", "#acacac", "#252525"]
     if type != "Y"
         each filter,index in data
@@ -36,7 +36,7 @@ mixin filter(data,type,icon)
                         
 mixin newsFilter(content,data)
     .col-lg-12.newsFilter
-        .newsFilter-title.d-flex
+        .newsFilter-title.d-flex.filter--title
             i.my-auto.pr-2.fas.fa-th-large
             h2= content
         ul.d-flex.flex-wrap
